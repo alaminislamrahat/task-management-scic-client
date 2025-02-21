@@ -1,7 +1,8 @@
 import {
     GoogleAuthProvider,
     onAuthStateChanged,
-    signInWithPopup
+    signInWithPopup,
+    signOut
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.init";
@@ -17,6 +18,12 @@ const LoginContext = ({ children }) => {
       setLoading(true);
       return signInWithPopup(auth, googleProvider);
     };
+
+
+    const logOut = () => {
+      setLoading(true)
+      return signOut(auth);
+  }
   
   
     //   for save user
@@ -37,6 +44,7 @@ const LoginContext = ({ children }) => {
       setUser,
       loading,
       setLoading,
+      logOut
     };
   
     return <FormContext.Provider value={obj}>{children}</FormContext.Provider>;

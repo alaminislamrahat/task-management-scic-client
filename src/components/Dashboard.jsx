@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FiChevronLeft, FiChevronRight, FiLogOut } from "react-icons/fi";
 import { NavLink, Outlet } from "react-router-dom";
 import { CiCirclePlus } from "react-icons/ci";
 import { GoTasklist } from "react-icons/go";
+import LoginContext, { FormContext } from "../context/LoginContext";
 
 const Dashboard = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const {logOut} = useContext(FormContext);
 
   const handleLogout = () => {
     // Add logout logic here
+    logOut()
+    .then(()=>{
+      console.log('logout')
+    })
     console.log("User logged out");
   };
 
