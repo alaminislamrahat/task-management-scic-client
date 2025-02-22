@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "scic-assignment-9dcaa"
-  }
+    "default": "task-management-scic-f82ee",
+    "dist": "task-management-scic-f82ee"
+  },
+  "targets": {},
+  "etags": {}
 }
