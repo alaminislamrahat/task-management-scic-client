@@ -14,6 +14,7 @@ const Edit = () => {
     const description = form.description.value;
     const category = form.category.value;
     const updateObj = { title, description, category };
+    console.log(updateObj)
 
     const response = await axios.patch(
       `${import.meta.env.VITE_URL}/tasks/${data._id}`,

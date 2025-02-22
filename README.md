@@ -1,76 +1,75 @@
-# SCIC Assignment
+Task Management System
+🌐 Live Link
+🔗 Task Management System
 
-## Project Overview
-SCIC Assignment is a task management application that allows users to create, update, and manage tasks efficiently. The platform is built with a MERN (MongoDB, Express.js, React.js, Node.js) stack, ensuring a seamless user experience.
+📦 Dependencies
+This project uses the following dependencies:
 
-## Live Demo
-🔗 [SCIC Assignment Live](https://scic-assignment-9dcaa.web.app)
+Frontend
+React.js
+Tailwind CSS
+React Router DOM
+Axios
+SweetAlert2
+Firebase (Authentication & Hosting)
+Backend
+Node.js
+Express.js
+MongoDB (Mongoose)
+CORS
+Dotenv
+🛠 Installation Steps
+Follow these steps to set up the project locally:
 
-## Features
-- User authentication and data management
-- Task creation, updating, and deletion
-- Filtering tasks by category
-- Responsive UI for a seamless experience
-
-## Technologies Used
-- **Frontend**: React.js, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB (Atlas)
-- **Authentication**: Firebase
-- **Hosting**: Firebase Hosting
-
-## Installation
-Follow these steps to run the project locally:
-
-### Backend Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/scic-assignment.git
-   cd scic-assignment/server
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Create a `.env` file and add your MongoDB credentials:
-   ```
-   DB_USER=your_mongo_username
-   DB_PASSWORD=your_mongo_password
-   PORT=7000
-   ```
-4. Start the backend server:
-   ```bash
-   node index.js
-   ```
-
-### Frontend Setup
-1. Navigate to the frontend directory:
-   ```bash
-   cd ../client
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the React app:
-   ```bash
-   npm start
-   ```
-
-## Dependencies
-### Backend
-- express
-- cors
-- dotenv
-- mongodb
-
-### Frontend
-- react
-- tailwindcss
-- react-router-dom
-
-## Contribution
-Feel free to fork this project and submit pull requests. Contributions are always welcome!
-
-## License
-This project is open-source and available under the MIT License.
+Frontend Setup
+Clone the repository
+bash
+Copy
+Edit
+git clone <your-frontend-repo-url>
+cd frontend
+Install dependencies
+bash
+Copy
+Edit
+npm install
+Create an .env file and configure Firebase & API URL
+env
+Copy
+Edit
+VITE_URL=http://localhost:5000
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+Run the project
+bash
+Copy
+Edit
+npm run dev
+Backend Setup
+Clone the repository
+bash
+Copy
+Edit
+git clone <your-backend-repo-url>
+cd backend
+Install dependencies
+bash
+Copy
+Edit
+npm install
+Create a .env file and configure environment variables
+env
+Copy
+Edit
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+Run the backend server
+bash
+Copy
+Edit
+npm run start
+🚀 Technologies Used
+Frontend: React.js, Tailwind CSS, Firebase
+Backend: Node.js, Express.js, MongoDB
+Database: MongoDB
+Authentication: Firebase Authentication
+Hosting: Firebase Hosting
