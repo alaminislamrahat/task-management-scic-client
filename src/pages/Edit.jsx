@@ -22,50 +22,48 @@ const Edit = () => {
     if (response.data) {
       Swal.fire({
         title: "Good job!",
-        text: "Task Updated sucessfully!",
+        text: "Task Updated successfully!",
         icon: "success",
       });
-        navigate(-1); 
+      navigate(-1);
     }
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-10">
-      <h1 className="text-2xl font-semibold text-center mb-5">Update Task</h1>
-      <form onSubmit={handelUpdate} className="space-y-4">
+    <div className="max-w-2xl mx-auto mt-10 p-8 bg-gray-800 text-white shadow-lg rounded-xl border-2 border-teal-700">
+      <h1 className="text-2xl font-semibold text-center mb-5 text-teal-500">Update Task</h1>
+      <form onSubmit={handelUpdate} className="space-y-5">
         {/* Title Input */}
         <div>
-          <label className="block font-semibold">Title (Max 50 chars):</label>
+          <label className="block font-semibold text-gray-300">Title (Max 50 chars):</label>
           <input
             type="text"
             maxLength="50"
             required
             name="title"
             defaultValue={data.title}
-            className="w-full p-2 border rounded mt-1"
+            className="w-full p-3 border border-gray-600 rounded-lg mt-1 focus:ring-2 focus:ring-teal-500 bg-gray-900 text-white"
           />
         </div>
 
         {/* Description Input */}
         <div>
-          <label className="block font-semibold">
-            Description (Max 200 chars):
-          </label>
+          <label className="block font-semibold text-gray-300">Description (Max 200 chars):</label>
           <textarea
             maxLength="200"
             name="description"
             defaultValue={data.description}
-            className="w-full p-2 border rounded mt-1"
+            className="w-full p-3 border border-gray-600 rounded-lg mt-1 focus:ring-2 focus:ring-teal-500 bg-gray-900 text-white"
           />
         </div>
 
         {/* Category Select */}
         <div>
-          <label className="block font-semibold">Category:</label>
+          <label className="block font-semibold text-gray-300">Category:</label>
           <select
             name="category"
             defaultValue={data.category}
-            className="w-full p-2 border rounded mt-1"
+            className="w-full p-3 border border-gray-600 rounded-lg mt-1 focus:ring-2 focus:ring-teal-500 bg-gray-900 text-white"
           >
             <option value="To-Do">To-Do</option>
             <option value="In Progress">In Progress</option>
@@ -76,7 +74,7 @@ const Edit = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-green-500 cursor-pointer text-white px-4 py-2 rounded hover:bg-green-300 hover:text-gray-500"
+          className="w-full bg-teal-600 text-white px-4 py-3 rounded-lg hover:bg-teal-700 transition duration-300"
         >
           Update Task
         </button>

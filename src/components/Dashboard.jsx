@@ -73,7 +73,7 @@ const Dashboard = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-5">
+      <div className="flex-1 p-5 bg-slate-900">
         <Outlet />
       </div>
     </div>

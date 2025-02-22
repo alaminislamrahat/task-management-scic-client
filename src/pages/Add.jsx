@@ -12,7 +12,7 @@ const Add = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!title.trim()) return; // Prevent empty title submission
+    if (!title.trim()) return;
 
     const newTask = {
       taskID: Date.now(),
@@ -26,8 +26,8 @@ const Add = () => {
     const res = await axios.post(`${import.meta.env.VITE_URL}/task`, newTask);
     if (res.data.insertedId) {
       Swal.fire({
-        title: "Good job!",
-        text: "Task Added sucessfully!",
+        title: "Success!",
+        text: "Task added successfully!",
         icon: "success",
       });
     }
@@ -39,43 +39,38 @@ const Add = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-10  p-6">
-      <h2 className="text-2xl font-bold text-center mb-4">Create a Task</h2>
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Title Input */}
+    <div className="max-w-xl mx-auto mt-10 p-8 bg-gray-800 text-white shadow-lg border-4 border-teal-700 rounded-xl">
+      <h2 className="text-3xl font-bold text-center mb-6 text-teal-400">Create a Task</h2>
+      
+      <form onSubmit={handleSubmit} className="space-y-5">
         <div>
-          <label className="block font-semibold">Title (Max 50 chars):</label>
+          <label className="block font-semibold text-gray-300">Title (Max 50 chars):</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             maxLength="50"
             required
-            className="w-full p-2 border rounded mt-1"
+            className="w-full p-3 border border-gray-600 rounded-lg mt-1 focus:ring-2 focus:ring-teal-500 bg-gray-900 text-white"
           />
         </div>
 
-        {/* Description Input */}
         <div>
-          <label className="block font-semibold">
-            Description (Max 200 chars):
-          </label>
+          <label className="block font-semibold text-gray-300">Description (Max 200 chars):</label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             maxLength="200"
-            className="w-full p-2 border rounded mt-1"
+            className="w-full p-3 border border-gray-600 rounded-lg mt-1 focus:ring-2 focus:ring-teal-500 bg-gray-900 text-white"
           />
         </div>
 
-        {/* Category Select */}
         <div>
-          <label className="block font-semibold">Category:</label>
+          <label className="block font-semibold text-gray-300">Category:</label>
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full p-2 border rounded mt-1"
+            className="w-full p-3 border border-gray-600 rounded-lg mt-1 focus:ring-2 focus:ring-teal-500 bg-gray-900 text-white"
           >
             <option value="To-Do">To-Do</option>
             <option value="In Progress">In Progress</option>
@@ -83,28 +78,13 @@ const Add = () => {
           </select>
         </div>
 
-        {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-green-500 cursor-pointer text-white px-4 py-2 rounded hover:bg-green-300 hover:text-gray-500"
+          className="w-full bg-teal-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-teal-700 transition duration-300"
         >
           Add Task
         </button>
       </form>
-
-      {/* Task List */}
-      {/* <div className="mt-6">
-        <h3 className="text-xl font-semibold mb-2">Task List</h3>
-        <ul>
-          {tasks.map((task) => (
-            <li key={task.id} className="bg-gray-200 p-3 rounded mt-2">
-              <strong>{task.title}</strong> ({task.category})<br />
-              <small>{task.description}</small><br />
-              <span className="text-gray-500 text-sm">{task.timestamp}</span>
-            </li>
-          ))}
-        </ul>
-      </div> */}
     </div>
   );
 };
